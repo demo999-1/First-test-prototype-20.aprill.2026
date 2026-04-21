@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 import path from "path";
 import { fileURLToPath } from "url";
 
-// Pin Turbopack workspace root to this repo. A stray `package-lock.json` under
-// the user home directory would otherwise make Next infer the wrong root.
+// Pin Turbopack workspace root to this config's directory to avoid
+// accidental parent-folder workspace inference.
 const turbopackRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
