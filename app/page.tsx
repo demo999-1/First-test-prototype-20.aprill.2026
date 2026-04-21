@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
@@ -15,7 +16,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <BookingModalController />
+      <Suspense fallback={null}>
+        <BookingModalController />
+      </Suspense>
       <main>
         <Hero />
         <TrustBar />
